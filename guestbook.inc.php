@@ -99,7 +99,7 @@ if ($_POST):
 		$script = "alert('Komentar tidak valid atau kosong!');$wpdoc.komentar.focus();";
 	elseif ($_SESSION['security_code'] != $_POST['kode']):
 		$valid = FALSE;
-		$script = "alert('Kode salah!');"
+		$script = "alert('" . __('Wrong code!'). "');"
 			."var c=wp.document.getElementById('captcha');"
 			."var src=c.src;"
 			."var pos=src.indexOf('?');"
@@ -135,7 +135,7 @@ if ($_POST):
 else:
 
 	ob_start();
-	$info = 'Komentar pengunjung website';
+	$info = __('Website Visitors Comments');
 	/*
 	 * tampilan daftar item buku tamu
 	 */
